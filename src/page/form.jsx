@@ -27,7 +27,7 @@ const handleFormSubmit = async (e) => {
     console.log(data);
 
     if (!isSignPage) {
-        await axios.post(`http://localhost:8000/register/user`, data)
+        await axios.post(`https://meyouchat-3fe1759de504.herokuapp.com/register/user`, data)
             .then((res) => {
                 console.log(res);
                 navigate('/');
@@ -37,7 +37,7 @@ const handleFormSubmit = async (e) => {
                 alert("Failed to register user: " + error.response.data);
             });
     } else {
-        await axios.post(`http://localhost:8000/login`, data)
+        await axios.post(`https://meyouchat-3fe1759de504.herokuapp.com/login`, data)
             .then((res) => {
                 console.log(res);
                 if (res.status === 400) {

@@ -20,7 +20,7 @@ const MessageBox = ({ message, seconUser, setMessage,setSecondUser, contactData,
     // console.log(message);
     socket.emit("send-message",{conversationId: message.conversationId, senderId: mainUser.id, message: userMessage, receiverId: seconUser.id});
     await axios
-      .post("http://localhost:8000/api/v1/message", {
+      .post("https://meyouchat-3fe1759de504.herokuapp.com/api/v1/message", {
         conversationId: message.conversationId,
         senderId: mainUser.id,
         message: userMessage,
@@ -36,7 +36,7 @@ const MessageBox = ({ message, seconUser, setMessage,setSecondUser, contactData,
   const handleGetMessage=async(contact,conversationId)=>{
     console.log(contact);
     //senderId=${mainUser.id}&&receiverId=${}
-    const userMessage= await axios.get(`http://localhost:8000/api/v1/message/${conversationId}?senderId=${mainUser.id}&&receiverId=${contact.user.id}`)
+    const userMessage= await axios.get(`https://meyouchat-3fe1759de504.herokuapp.com/api/v1/message/${conversationId}?senderId=${mainUser.id}&&receiverId=${contact.user.id}`)
     console.log(userMessage);
     console.log(contact);
     setSecondUser(contact.user);

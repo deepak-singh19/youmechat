@@ -49,7 +49,7 @@ const Dashboard = () => {
 
   const getAllUser=async()=>{
     console.log(currUser)
-    const resData= await axios.get(`http://localhost:8000/api/v1/users/${currUser.id}`);
+    const resData= await axios.get(`https://meyouchat-3fe1759de504.herokuapp.com/api/v1/users/${currUser.id}`);
     setAllUser(resData.data);
   }
 

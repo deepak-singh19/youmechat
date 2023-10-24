@@ -13,7 +13,7 @@ const MyContact = ({setMessage, setSecondUser, contactData, setContactData, sock
   const getContact = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8000/api/v1/conversation/${user.id}`
+        `https://meyouchat-3fe1759de504.herokuapp.com/api/v1/conversation/${user.id}`
       );
       // Assuming the response data is an array, set it in the state
       setContactData(response.data);
@@ -23,7 +23,7 @@ const MyContact = ({setMessage, setSecondUser, contactData, setContactData, sock
   };
 
   const handleGetMessage=async(contact)=>{
-    const userMessage= await axios.get(`http://localhost:8000/api/v1/message/${contact.conversationId}`)
+    const userMessage= await axios.get(`https://meyouchat-3fe1759de504.herokuapp.com/api/v1/message/${contact.conversationId}`)
     console.log(userMessage);
     console.log(contact.user)
     setSecondUser(contact.user);
